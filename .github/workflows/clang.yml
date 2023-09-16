@@ -1,0 +1,20 @@
+on: [push]
+name: CHIRP CI
+jobs:
+  build_and_test:
+    name: CHIRP CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Compile Chirp."
+        run: make && make perm
+
+      - name: "Get version info."
+        run: ./chirp version
+
+      - name: "Get help info."
+        run: ./chirp help
+
+      - name: "Run a validation."
+        run: ./chirp pwd 1969HoglinSteak
