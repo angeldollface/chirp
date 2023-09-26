@@ -8,6 +8,52 @@ Licensed under the MIT license.
 #include<stdlib.h>
 #include <string.h>
 
+struct SecurityInfo {
+    int score;
+    int is_secure;
+};
+
+struct SecurityInfo create_new(int score, int is_secure){
+    struct SecurityInfo info;
+    info.score = score;
+    info.is_secure = is_secure;
+    return info;
+}
+
+struct SecurityInfo get_analysis_results(
+    char pwd[], 
+    int sec_weight, 
+    int arabic_weight, 
+    int special_weight,
+    int cutoff
+){
+    struct SecurityInfo result;
+    int score = password_strength(
+        pwd, 
+        sec_weight, 
+        arabic_weight, 
+        special_weight
+    );
+    result.score = score;
+    if (score > cutoff == 0){
+        result.is_secure = 0;
+    }
+    else {
+        result.is_secure = 1;
+    }
+    return result;
+}
+
+const char* to_string(struct SecurityInfo info){
+    char score[6];
+    sprintf(score, "%d", info.score);
+    char is_secure[1];
+    sprintf(is_secure, "%d", info.is_secure);
+    char result[30];
+    sprintf(result, "Score: %s\nStatus: %s\n", score, is_secure);
+    return result;
+}
+
 // This function returns the position of
 // a letter in the alphabet.
 int get_char_pos(char letter){
@@ -95,7 +141,12 @@ const char* char_type(char character){
 
 // This function computes the strength of a password
 // and returns it.
-int password_strength(char pwd[], int sec_weight, int arabic_weight, int special_weight){
+int password_strength(
+    char pwd[], 
+    int sec_weight, 
+    int arabic_weight, 
+    int special_weight
+){
     int result = 0;
     for (int i = 0; i < strlen(pwd); i++){
         char current = pwd[i];
@@ -130,7 +181,13 @@ int password_strength(char pwd[], int sec_weight, int arabic_weight, int special
 // This function checks whether a password is secure
 // depending on the cutoff score and the actual score
 // it received.
-int is_secure(char pwd[], int sec_weight, int arabic_weight, int special_weight, int cutoff){
+int is_secure(
+    char pwd[], 
+    int sec_weight, 
+    int arabic_weight, 
+    int special_weight, 
+    int cutoff
+){
     int result = 0;
     int score = password_strength(pwd, sec_weight, arabic_weight, special_weight);
     if (score > cutoff){
@@ -156,6 +213,10 @@ int str_is_empty(char str[]){
 // CLI.
 void cli(int argc, char* argv[]){
     char err_msg[] = "Unrecognized combination of arguments.";
+    int sec_weight = 3;
+    int arabic_weight = 3;
+    int special_weight = 2;
+    int cutoff = 12;
     if (argc == 2){
        if (strcmp(argv[1], "version") == 0){
             printf("Chirp v.0.1.0\nby Angel Dollface.\n");
@@ -169,18 +230,8 @@ void cli(int argc, char* argv[]){
     }
     else if (argc == 3){
         if (strcmp(argv[1], "pwd") == 0 && str_is_empty(argv[2]) != 1){
-            int sec_weight = 3;
-            int arabic_weight = 3;
-            int special_weight = 2;
-            printf(
-                "Score: %d\n", 
-                password_strength(
-                    argv[2],
-                    sec_weight,
-                    arabic_weight,
-                    special_weight
-                )
-            );
+            struct SecurityInfo info = get_analysis_results(argv[2], sec_weight, arabic_weight, special_weight, cutoff);
+            printf("%s\n", to_string(info));
         }
         else {
             printf("%s\n", err_msg);
