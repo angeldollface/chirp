@@ -8,11 +8,17 @@ Licensed under the MIT license.
 #include<stdlib.h>
 #include <string.h>
 
+// A structure to hold
+// information about
+// the analysis of a
+// password.
 struct SecurityInfo {
     int score;
     int is_secure;
 };
 
+// This function creates a new instance of the
+// "SecurityInfo" structure.
 struct SecurityInfo create_new(int score, int is_secure){
     struct SecurityInfo info;
     info.score = score;
@@ -20,6 +26,9 @@ struct SecurityInfo create_new(int score, int is_secure){
     return info;
 }
 
+// This function takes in analysis parameters and+
+// returns the results of this analysis as an instance
+// of the "SecurityInfo" structure.
 struct SecurityInfo get_analysis_results(
     char pwd[], 
     int sec_weight, 
@@ -41,16 +50,6 @@ struct SecurityInfo get_analysis_results(
     else {
         result.is_secure = 1;
     }
-    return result;
-}
-
-const char* to_string(struct SecurityInfo info){
-    char score[6];
-    sprintf(score, "%d", info.score);
-    char is_secure[1];
-    sprintf(is_secure, "%d", info.is_secure);
-    char result[30];
-    sprintf(result, "Score: %s\nStatus: %s\n", score, is_secure);
     return result;
 }
 
@@ -231,7 +230,9 @@ void cli(int argc, char* argv[]){
     else if (argc == 3){
         if (strcmp(argv[1], "pwd") == 0 && str_is_empty(argv[2]) != 1){
             struct SecurityInfo info = get_analysis_results(argv[2], sec_weight, arabic_weight, special_weight, cutoff);
-            printf("%s\n", to_string(info));
+            printf("Password: %s\n", argv[2]);
+            printf("Score: %d\n", info.score);
+            printf("Status: %d\n", info.is_secure);
         }
         else {
             printf("%s\n", err_msg);
