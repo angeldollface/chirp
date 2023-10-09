@@ -26,7 +26,7 @@ struct SecurityInfo create_new(int score, int is_secure){
     return info;
 }
 
-// This function takes in analysis parameters and+
+// This function takes in analysis parameters and
 // returns the results of this analysis as an instance
 // of the "SecurityInfo" structure.
 struct SecurityInfo get_analysis_results(
