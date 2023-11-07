@@ -1,4 +1,4 @@
-# PUG :ribbon: :gear: :heart:
+# CHIRP :ribbon: :gear: :heart:
 
 ![GitHub CI](https://github.com/angeldollface/chirp/actions/workflows/clang.yml/badge.svg)
 
