@@ -1,6 +1,6 @@
 # CHIRP :ribbon: :gear: :heart:
 
-![GitHub CI](https://github.com/angeldollface/chirp/actions/workflows/clang.yml/badge.svg)
+![GitHub CI](https://github.com/angeldollface/chirp/actions/workflows/main.yml/badge.svg)
 
 ***An implementation for a CLI tool in C that uses my algorithm to validate passwords. :ribbon: :gear: :heart:***
 
@@ -13,7 +13,7 @@ Since I've become a huge fan of C, I thought I'd reimplement a CLI tool that che
 Make sure you have the following tools installed and available as commands from a terminal session:
 
 - Git
-- Clang
+- The GNU C Compiler
 - CMake
 
 To install ***Chirp***, follow these steps:
