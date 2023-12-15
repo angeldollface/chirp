@@ -14,7 +14,7 @@ Make sure you have the following tools installed and available as commands from 
 
 - Git
 - The GNU C Compiler
-- CMake
+- Make
 
 To install ***Chirp***, follow these steps:
 
