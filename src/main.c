@@ -5,7 +5,7 @@ Licensed under the MIT license.
 
 #include <stdio.h>
 #include <ctype.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <string.h>
 
 // A structure to hold
