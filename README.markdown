@@ -15,6 +15,9 @@ Make sure you have the following tools installed and available as commands from 
 - Git
 - The GNU C Compiler
 - Make
+- Automake
+- Autoconf
+- Libtool
 
 To install ***Chirp***, follow these steps:
 
@@ -30,19 +33,23 @@ git clone https://github.com/angeldollface/chirp.git
 cd chirp
 ```
 
-- 3.) Compile ***Chirp***:
+- 3.) Run Autoconf:
 
 ```bash
-make
+autoreconf --verbose --install --force
 ```
 
-- 4.) Change the generated executable's permissions (on Mac OS or Linux):
+- 4.) Run the `configure` script:
 
 ```bash
-make perm
+./configure
 ```
 
-- 5.) Move the file `chirp` to a location on your system's `$PATH`.
+- 5.) Install ***Chirp***:
+
+```bash
+sudo make install
+```
 
 ## USAGE :hammer:
 
