@@ -22,7 +22,7 @@ Licensed under the DSL v1.
 struct SecurityInfo {
     int score;
     int is_secure;
-};
+} SecurityInfo;
 
 // This function creates a new instance of the
 // "SecurityInfo" structure.
