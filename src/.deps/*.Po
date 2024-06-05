@@ -1,3 +1,0 @@
-src/*.o: src/main.c /usr/include/stdc-predef.h src/lib/cli.h
-/usr/include/stdc-predef.h:
-src/lib/cli.h:

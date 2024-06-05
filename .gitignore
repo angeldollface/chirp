@@ -13,5 +13,6 @@ install-sh~
 Makefile
 Makefile.in
 missing
-src/.dirstamp
-src/.deps/
+/src/.dirstamp
+/src/.deps/
+/src/'*.o'
