@@ -16,3 +16,6 @@ missing
 /src/.dirstamp
 /src/.deps/
 /src/'*.o'
+/src/lib/.deps/
+/src/lib/.dirstamp/
+
