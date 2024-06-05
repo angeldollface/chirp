@@ -13,7 +13,7 @@ extern int is_secure(char pwd[], int sec_weight, int arabic_weight, int special_
 extern int get_char_pos(char letter);
 extern int get_num_space(char one, char two);
 extern int get_char_space(char one, char two);
-extern struct SecurityInfo;
+extern typedef struct SecurityInfo;
 extern const char* char_type(char character);
 extern int password_strength(char pwd[], int sec_weight, int arabic_weight, int special_weight);
 extern struct SecurityInfo create_new(int score, int is_secure);
