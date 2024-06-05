@@ -75,6 +75,12 @@ chirp help
 
 ## CHANGELOG :black_nib:
 
+### Version 0.2.0
+
+- Added the Automake build system.
+- Split code into modules.
+- Relicensed the project under the [DSL v1](https://github.com/angeldollface/doll-software-license).
+
 ### Version 0.1.0
 
 - Initial release.
@@ -83,4 +89,4 @@ chirp help
 # NOTE :scroll:
 
 - *Chirp :ribbon: :gear: :heart:* by Alexander Abraham :black_heart: a.k.a. *"Angel Dollface" :dolls: :ribbon:*
-- Licensed under the MIT license.
+- Licensed under the [DSL v1](https://github.com/angeldollface/doll-software-license).

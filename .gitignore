@@ -1,3 +1,15 @@
 .DS_Store
 chirp
 /autom4te.cache
+aclocal.m4
+compile
+config.log
+config.status
+configure
+configure~
+depcomp
+install-sh
+install-sh~
+Makefile
+Makefile.in
+missing
