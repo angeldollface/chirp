@@ -33,23 +33,14 @@ git clone https://github.com/angeldollface/chirp.git
 cd chirp
 ```
 
-- 3.) Run Autoconf:
+- 3.) Compile ***Chirp***:
 
 ```bash
-autoreconf --verbose --install --force
+make
 ```
 
-- 4.) Run the `configure` script:
+- 4.) Move the resulting binary `chirp` to a location that is on your path.
 
-```bash
-./configure
-```
-
-- 5.) Install ***Chirp***:
-
-```bash
-sudo make install
-```
 
 ## USAGE :hammer:
 
@@ -77,7 +68,6 @@ chirp help
 
 ### Version 0.2.0
 
-- Added the Automake build system.
 - Split code into modules.
 - Relicensed the project under the [DSL v1](https://github.com/angeldollface/doll-software-license).
 

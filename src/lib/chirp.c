@@ -151,10 +151,10 @@ int is_secure(
 ){
     int result = 0;
     int score = password_strength(pwd, sec_weight, arabic_weight, special_weight);
-    if (score > cutoff){
-        result = 1;
-    }
-    else {}
+    if (score > cutoff){}
+    else {
+			result = 1;
+		}
     return result;
 }
 
