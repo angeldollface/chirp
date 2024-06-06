@@ -7,6 +7,7 @@ Licensed under the DSL v1.
 #ifndef CHIRP_H
 #define CHIRP_H
 
+extern int str_is_empty(char str[]);
 extern int is_int(char subject);
 extern int is_letter(char character);
 extern int is_number_sequence(char subject[]);
