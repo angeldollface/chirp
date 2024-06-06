@@ -15,51 +15,6 @@ Licensed under the DSL v1.
 #include <string.h>
 
 
-// A structure to hold
-// information about
-// the analysis of a
-// password.
-struct SecurityInfo {
-    int score;
-    int is_secure;
-} SecurityInfo;
-
-// This function creates a new instance of the
-// "SecurityInfo" structure.
-struct SecurityInfo create_new(int score, int is_secure){
-    struct SecurityInfo info;
-    info.score = score;
-    info.is_secure = is_secure;
-    return info;
-}
-
-// This function takes in analysis parameters and
-// returns the results of this analysis as an instance
-// of the "SecurityInfo" structure.
-struct SecurityInfo get_analysis_results(
-    char pwd[], 
-    int sec_weight, 
-    int arabic_weight, 
-    int special_weight,
-    int cutoff
-){
-    struct SecurityInfo result;
-    int score = password_strength(
-        pwd, 
-        sec_weight, 
-        arabic_weight, 
-        special_weight
-    );
-    result.score = score;
-    if (score > cutoff == 0){
-        result.is_secure = 0;
-    }
-    else {
-        result.is_secure = 1;
-    }
-    return result;
-}
-
 // This function returns the position of
 // a letter in the alphabet.
 int get_char_pos(char letter){
@@ -213,4 +168,18 @@ int str_is_empty(char str[]){
     }
     else {}
     return result;
+}
+
+// This function checks
+// whether a string is a
+// sequence of digits.
+int is_number_sequence(char subject[]){
+	int result = 0;
+	for (int i = 0; i < strlen(subject); i++){
+		if (is_int(subject[i]) == 1){
+				result = 1;
+		}
+		else {}
+	}
+	return result;
 }
